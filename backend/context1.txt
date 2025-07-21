@@ -1,0 +1,937 @@
+﻿Some Required Amendments in Section B Rubrics across the LPs
+
+
+Difference of both Rubrics - Lesson 1
+Code
+	Indicator Description
+	Rating
+	API Version
+	ChatGPT Version
+	Key Differences
+	B1
+	States lesson objectives (verbally & written)
+	Yes
+	Talks about professions aligned with SLO
+	Writes and says objectives explicitly
+	ChatGPT clearly separates written/verbal and gives LP-specific phrasing.
+	
+
+	
+
+	Partial
+	Discusses professions but not structured
+	Only written or verbal, not both
+	ChatGPT defines the exact missing piece (either write/say)
+	
+
+	
+
+	No
+	Objectives not stated at all
+	Neither written nor spoken
+	Both aligned; ChatGPT is more precise in distinction
+	B2
+	Uses LP resources or suitable alternatives
+	Yes
+	Uses textbook page 20
+	Uses textbook page 20 with visual instructions
+	ChatGPT adds reference to visuals, showing full use of resource
+	
+
+	
+
+	Partial
+	Uses some resources but not textbook page 20
+	Uses textbook but skips pictures or doesn’t interact
+	ChatGPT is more detailed about how the resource is used
+	
+
+	
+
+	No
+	Uses neither textbook nor alternatives
+	Does not use textbook or aids
+	Largely similar
+	B3
+	Applies suggested methodologies
+	Yes
+	Uses Picture Walk, cues, questioning
+	Uses all listed methods and real-world links
+	ChatGPT includes examples (e.g., cobbler, doctor) and links to real life
+	
+
+	
+
+	Partial
+	Uses some methods but omits key ones
+	Uses 1–2 methods, skips others
+	ChatGPT explains exact omissions like skipping Picture Walk
+	
+
+	
+
+	No
+	No methods used
+	No methods from LP followed
+	Similar clarity
+	B4
+	Relates activities to objectives
+	Yes
+	Picture Walk & discussion on professions
+	All activities clearly target objectives
+	ChatGPT connects each activity to specific SLOs
+	
+
+	
+
+	Partial
+	Activities not clearly linked to objectives
+	Loosely connected activities
+	ChatGPT better explains misalignment
+	
+
+	
+
+	No
+	Activities don’t relate to objectives
+	Off-topic activities
+	Same judgment, better language in ChatGPT
+	B5
+	Aligns instruction with cognitive level
+	Yes
+	Uses strategies suited to prediction/vocabulary
+	Uses Bloom's levels with examples
+	ChatGPT aligns fully with Bloom’s and gives layered evidence
+	
+
+	
+
+	Partial
+	Uses questioning but lacks engagement
+	Follows some Bloom levels but misses others
+	ChatGPT explains levels missed and depth of alignment
+	
+
+	
+
+	No
+	Instruction doesn’t align
+	Only remembering-level tasks
+	ChatGPT explains the mismatch with Bloom’s Taxonomy more clearly
+	B6
+	Incorporates 21st-century skills
+	Yes
+	Communication & critical thinking used
+	Uses pair talk, “can you think of…” for CT
+	ChatGPT gives rich examples showing both skills
+	
+
+	
+
+	Partial
+	Some 21st-century skills used
+	One skill used or weak facilitation
+	ChatGPT shows which skill is missing
+	
+
+	
+
+	No
+	No 21st-century skills observed
+	No interaction or active tasks
+	Similar clarity
+	B7
+	Connects to prior knowledge
+	Yes
+	Asks about future professions
+	Asks about student identity and career dreams
+	ChatGPT better shows authentic prior-knowledge activation
+	
+
+	
+
+	Partial
+	General connection, not targeted
+	Generic questions only
+	ChatGPT differentiates the depth of connection
+	
+
+	
+
+	No
+	No prior knowledge connection
+	No link to student experience
+	Matched
+	B8
+	Connects to other content or daily life
+	Yes
+	Real-life examples like cobbler
+	Uses cobbler, doctor, farmer with family links
+	ChatGPT gives more specific context and homework tie-in
+	
+
+	
+
+	Partial
+	Some real-life connection, not full
+	Limited discussion of relevance
+	ChatGPT more specific
+	
+
+	
+
+	No
+	No content/life connection
+	No link to other domains
+	Equal clarity
+	B9
+	Instructions and facilitation during GP
+	Yes
+	Clear instructions & facilitation
+	Gives steps, checks understanding, shares responses
+	ChatGPT more detailed about how GP is structured
+	
+
+	
+
+	Partial
+	Instructions but weak facilitation
+	Unclear steps or limited follow-up
+	ChatGPT is more actionable for observer scoring
+	
+
+	
+
+	No
+	No instruction or facilitation
+	GP absent or unstructured
+	Matched
+	B10
+	Instructions and monitoring during IP
+	Yes
+	Clear instructions, monitors work
+	Full GRR model: I Do, We Do, You Do
+	ChatGPT demonstrates stronger sequencing and teacher moves
+	
+
+	
+
+	Partial
+	Instructions but weak monitoring
+	Monitoring not consistent
+	ChatGPT again more transparent
+	
+
+	
+
+	No
+	No instructions/monitoring
+	IP is unguided
+	Equal
+	B11
+	GRR Model followed
+	Yes
+	Direct instruction → pair work → IP
+	Teacher walks through GRR steps with examples
+	ChatGPT shows full sequencing with concrete labels
+	
+
+	
+
+	Partial
+	GRR used but one stage missing
+	Skips a phase like We Do or You Do
+	ChatGPT outlines what’s missing.
+	
+
+	
+
+	No
+	No GRR model followed
+	No release structure
+	Consistent between both.
+	
+
+
+
+
+
+Lesson Fidelity Rubric 2 - API Version 
+Code
+	Indicator Description
+	Yes
+	Partial
+	No
+	B1
+	The teacher clearly states the lesson's objectives at the start verbally and in written form.
+	The teacher verbally introduces the lesson by stating the focus on creating stories from pictures and understanding their main idea.
+	The teacher mentions the activity of creating stories from pictures but does not explicitly state all objectives verbally or in written form.
+	The teacher does not state the lesson's objectives verbally or in written form at the start.
+	B2
+	The teacher uses either the resources outlined in the lesson plan or alternative resources facilitating the SLO.
+	The teacher uses the Word Wall for vocabulary and the whiteboard for difficult words as outlined in the plan.
+	The teacher uses only one of the resources, either the Word Wall or the whiteboard, but not both.
+	The teacher does not use the Word Wall or the whiteboard as resources during the lesson.
+	B3
+	The teacher applies the suggested learning methodologies to facilitate effective lesson delivery.
+	The teacher uses the 'Picture Prompt Strategy' as outlined in the lesson plan.
+	The teacher partially uses the 'Picture Prompt Strategy' but does not fully implement it as described.
+	The teacher does not use the 'Picture Prompt Strategy' during the lesson.
+	B4
+	The teacher clearly relates classroom activities to the stated objectives.
+	The teacher relates the activity of creating stories from pictures to the objective of understanding and commenting on the main idea of a picture story.
+	The teacher conducts activities related to picture stories but does not clearly connect them to the stated objectives.
+	The teacher does not relate classroom activities to the stated objectives of creating and understanding picture stories.
+	B5
+	The teacher designs and delivers instruction that aligns with the cognitive level of the lesson's stated learning objective.
+	The teacher's instruction aligns with the 'Creation' level of Bloom's Taxonomy by having students create stories from pictures.
+	The teacher's instruction partially aligns with the cognitive level but lacks full engagement in the creation process.
+	The teacher's instruction does not align with the 'Creation' level of Bloom's Taxonomy.
+	B6
+	The teacher effectively incorporates 21st century skills into the instructional process.
+	The teacher incorporates creativity, a 21st century skill, by having students create and present stories from pictures.
+	The teacher mentions creativity but does not fully incorporate it into the instructional process.
+	The teacher does not incorporate any 21st century skills into the instructional process.
+	B7
+	The teacher connects the lesson's opening to students' prior knowledge through targeted questioning or an activity outlined in the lesson plan.
+	The teacher connects the lesson's opening to prior knowledge by asking students what they see in the picture and encouraging them to share their thoughts.
+	The teacher asks questions but does not effectively connect them to students' prior knowledge.
+	The teacher does not connect the lesson's opening to students' prior knowledge.
+	B8
+	The teacher makes connections in the lesson that relate to other content knowledge or students' daily lives.
+	The teacher makes connections to students' daily lives by discussing the importance of helping others and caring for animals.
+	The teacher makes some connections but does not fully relate them to students' daily lives or other content knowledge.
+	The teacher does not make any connections to other content knowledge or students' daily lives.
+	B9
+	The teacher provides clear instructions and facilitates most of the students during Guided Practice (GP).
+	The teacher provides clear instructions for group work and facilitates students by circulating and offering assistance.
+	The teacher provides instructions but does not effectively facilitate all groups during Guided Practice.
+	The teacher does not provide clear instructions or facilitate students during Guided Practice.
+	B10
+	The teacher gives clear instructions and monitors most of the students during Independent Practice (IP).
+	The teacher gives clear instructions for presenting stories and monitors students by listening to presentations and providing feedback.
+	The teacher gives instructions but does not effectively monitor all students during Independent Practice.
+	The teacher does not give clear instructions or monitor studentsduring Independent Practice.
+	B11
+	The teacher follows the sequence of GRR Model (Gradual Release of Responsibility) throughout the lesson.
+	The teacher follows the GRR Model by demonstrating, guiding group work, and then having students independently present stories.
+	The teacher follows some aspects of the GRR Model but does not fully implement all stages.
+	The teacher does not follow the GRR Model during the lesson.
+	 Lesson Fidelity Rubric 2 - ChatGPT Version 
+
+
+No
+	Partial
+	Yes
+	Indicators 
+	Code
+	Lesson Design and Delivery
+	No evidence of lesson objectives being stated or explained.
+	Objectives are implied through activities, but not clearly written or labeled as “objectives” during instruction.
+
+
+
+
+	Objectives are clearly listed at the beginning in written form and verbally referenced in the opening (e.g., “ہم آج تصویری کہانی بنانا سیکھیں گے”)
+	The teacher clearly states the lesson's objectives at the start verbally and in written form. 
+	B1
+	No use of planned resources or alternatives is mentioned in the lesson.
+
+
+
+
+	Only mentions limited use of visual aids (e.g., بورڈ پر الفاظ لکھنا), no reference to Word Wall or rich AV support.
+
+
+
+
+	Word Wall and images are explicitly used, with alternatives like writing on the whiteboard clearly suggested.
+
+
+
+
+	The teacher uses either the resources outlined in the lesson plan or alternative audiovisual aids.
+	B2
+	No evidence of applying the suggested strategy or methodology.
+	Mentions Picture Prompt Strategy, but with limited integration in teaching steps
+	Uses “تصویری اشاروں کی حکمت عملی” thoroughly—includes guided prompts, questioning, group discussion, and reflection.
+
+
+
+
+	The teacher applies the suggested learning methodologies to facilitate effective lesson delivery. 
+	B3
+	Activities appear disconnected from the stated learning objectives.
+
+
+
+
+	Activities occur but with weak or unclear links to objectives like creativity or verbal retelling.
+
+
+
+
+	Activities (picture observation, group writing, story presentation) are directly aligned with each listed objective.
+	The teacher clearly relates classroom activities to the stated objective
+	B4
+	Instruction does not engage students in creating or synthesizing ideas.
+
+
+
+
+	Some creative tasks are present, but the majority of instruction remains at lower-order levels (e.g., only recall).
+	Objectives focus on “تخلیق” (Creation - Bloom's highest level) and students create original stories using pictures.
+
+
+
+
+	The teacher designs and delivers instruction that aligns with the cognitive level of the lesson’s stated learning objective
+	B5
+	No reference or activity promoting 21st-century skills like creativity.
+
+
+
+
+	Creativity is mentioned but not clearly developed or guided in practice.
+	Creativity (تخلیقیت) is explicitly highlighted as a skill and integrated through group storytelling and independent performance.
+
+
+	The teacher effectively incorporates 21st century skills into the instructional process
+	B6
+	Student Engagement and Relevance
+	No evidence of using students' prior knowledge or questioning strategy.
+
+
+
+
+	Some informal questioning occurs, but connection to prior knowledge is vague or unsystematic.
+
+
+
+
+	Activates students' prior knowledge and connects to storytelling by asking warm-up questions based on visuals (e.g., “بچہ کیا کر رہا ہے؟”).
+
+
+	The teacher connects the lesson's opening to students’ prior knowledge through targeted questioning or an activity outlined in the lesson plan
+	B7
+	No connections to students' real-life experiences or content across subjects.
+
+
+
+
+	One or two incidental references to daily life or morality; not sustained.
+	Questions like “اگر لڑکی اور لڑکا مدد نہ کرتے تو کیا ہوتا؟” link story to empathy, real-life values, and moral reasoning.
+
+
+
+
+	The teacher makes connections in the lesson that relates to other content knowledge or students' daily lives 
+	B8
+	Instruction and Monitoring
+	No guided group work or teacher support described during GP.
+
+
+
+
+	Instructions are somewhat clear, but the teacher's role in facilitating and circulating is not visible.
+	Students form pairs/groups, are instructed to discuss pictures, ask each other questions, and co-write story parts.
+
+
+
+
+	The teacher provides clear instructions and facilitates most of the students during Guided Practice (GP)
+	B9
+	No mention of instructions or monitoring during Independent Practice.
+	Presentation occurs but teacher monitoring or feedback is not clear.
+
+
+
+
+	Students present full stories in order, with teacher feedback and encouragement described.
+
+
+
+
+	The teacher gives clear instructions and monitors most of the students during Independent Practice (IP
+	B10
+	Lesson Closure
+	No use of GRR model; lesson is teacher-directed or unstructured.
+	Some elements of GRR present, but not all stages (e.g., missing modeling or independent transfer).
+
+
+
+
+	Gradual progression: teacher modeling → guided discussion → pair activity → student presentation; matches GRR
+	The teacher follows the sequence of GRR Model (Gradual Release of Responsibility) throughout the lesson.
+	B11
+	
+
+ Difference of both Rubrics - Lesson 2
+
+
+Code
+	Indicator Description
+	Rating
+	API Version
+	ChatGPT Version
+	Key Differences
+	B1
+	The teacher clearly states the lesson's objectives at the start verbally and in written form.
+	Yes
+	Verbally introduces story creation and understanding the idea.
+	Clearly writes and says objective like “ہم آج تصویری کہانی بنانا سیکھیں گے”.
+	ChatGPT gives exact LP phrasing; distinguishes both written and verbal.
+	
+
+	
+
+	Partial
+	Activity mentioned but not as an objective; no full explanation.
+	Only written or verbal objectives are present.
+	ChatGPT points out which format is missing.
+	
+
+	
+
+	No
+	No objective shared.
+	No verbal or written objective.
+	Same conclusion; ChatGPT more explicit.
+	B2
+	The teacher uses either the resources outlined in the lesson plan or alternative resources facilitating the SLO.
+	Yes
+	Uses Word Wall and whiteboard for vocabulary as planned.
+	Uses all visual aids listed, includes whiteboard and alternatives.
+	ChatGPT details how each resource is actively used.
+	
+
+	
+
+	Partial
+	Only one resource used (e.g., only Word Wall).
+	Limited use of AV aids, unclear interaction.
+	ChatGPT clearer about resource underuse.
+	
+
+	
+
+	No
+	No listed or alternative resources used.
+	No use of Word Wall or whiteboard.
+	Similar judgment.
+	B3
+	The teacher applies the suggested learning methodologies.
+	Yes
+	Applies “Picture Prompt Strategy” fully.
+	Uses “تصویری اشاروں کی حکمت عملی” + prompts, Q&A, group interaction.
+	ChatGPT includes practical class-level evidence.
+	
+
+	
+
+	Partial
+	Strategy partially used.
+	Strategy mentioned but poorly integrated.
+	ChatGPT highlights where strategy breaks down.
+	
+
+	
+
+	No
+	No strategy used.
+	Strategy absent.
+	Same outcome.
+	B4
+	The teacher clearly relates classroom activities to the stated objectives.
+	Yes
+	Activities (story-making) aligned with objectives.
+	Activities (observe, write, present) aligned with each objective.
+	ChatGPT shows direct mapping to each SLO.
+	
+
+	
+
+	Partial
+	Activities linked vaguely to objectives.
+	Creativity/retelling not clearly tied to objectives.
+	ChatGPT explains misalignment in purpose.
+	
+
+	
+
+	No
+	Activities do not reflect objectives.
+	No connection to stated outcomes.
+	Consistent finding.
+	B5
+	The teacher designs and delivers instruction aligned to the cognitive level of the SLO.
+	Yes
+	Matches Bloom's “Creation” through story-making.
+	Links to Bloom’s via story design, creativity, group processing.
+	ChatGPT gives level-wise breakdown.
+	
+
+	
+
+	Partial
+	Creative elements present, not consistent.
+	Tasks remain at recall level, little synthesis.
+	ChatGPT shows missed cognitive engagement.
+	
+
+	
+
+	No
+	Tasks don’t match cognitive level.
+	Passive, recall-only instruction.
+	ChatGPT shows depth of mismatch.
+	B6
+	The teacher effectively incorporates 21st century skills.
+	Yes
+	Uses creativity through story activity.
+	Creativity, communication, collaboration highlighted.
+	ChatGPT lists skills with examples.
+	
+
+	
+
+	Partial
+	Creativity mentioned but not well-used.
+	Creativity is weakly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ guided, not applied.
+	ChatGPT distinguishes naming vs applying.
+	
+
+	
+
+	No
+	No 21st century skills used.
+	No skills or student-led tasks.
+	Same evaluation.
+	B7
+	The teacher connects the lesson's opening to students’ prior knowledge.
+	Yes
+	Students describe what they see in pictures.
+	Asks targeted warm-up questions based on visuals.
+	ChatGPT offers Urdu questioning examples.
+	
+
+	
+
+	Partial
+	General questions asked.
+	No strategic link to past experience.
+	ChatGPT details weak linkage.
+	
+
+	
+
+	No
+	No prior knowledge activation.
+	No questioning or connection.
+	Identical.
+	B8
+	The teacher makes connections to daily life or other content.
+	Yes
+	Discusses helping others, animals.
+	Links story to empathy and real-life morals (e.g., “اگر مدد نہ کرتے تو…”).
+	ChatGPT adds values and emotional context.
+	
+
+	
+
+	Partial
+	Some connections, not sustained.
+	Daily life briefly mentioned, not explored.
+	ChatGPT explains lack of depth.
+	
+
+	
+
+	No
+	No life or content relevance.
+	No connections made.
+	Same decision.
+	B9
+	The teacher provides clear instructions and facilitates Guided Practice.
+	Yes
+	Groups formed; teacher helps.
+	Teacher gives group task, circulates, questions students.
+	ChatGPT provides step-by-step engagement.
+	
+
+	
+
+	Partial
+	Instructions given, facilitation weak.
+	Teacher role unclear during GP.
+	ChatGPT clarifies role gaps.
+	
+
+	
+
+	No
+	No support or group structure.
+	GP skipped or unmanaged.
+	Same result.
+	B10
+	The teacher gives clear instructions and monitors Independent Practice.
+	Yes
+	Story presentations monitored, feedback given.
+	Teacher guides, observes, gives individual feedback.
+	ChatGPT shows observable teacher behaviors.
+	
+
+	
+
+	Partial
+	Instructions but limited monitoring.
+	Presentation happens, no follow-up seen.
+	ChatGPT outlines incomplete monitoring.
+	
+
+	
+
+	No
+	No instruction or checking.
+	No IP structure or teacher presence.
+	Matched outcome.
+	B11
+	The teacher follows the GRR Model.
+	Yes
+	Direct teaching → group work → IP
+	Clear I Do → We Do → You Do sequence shown.
+	ChatGPT labels GRR phases clearly.
+	
+
+	
+
+	Partial
+	Some stages used, others missed.
+	Phase(s) like modeling or application skipped.
+	ChatGPT defines missing stages.
+	
+
+	
+
+	No
+	No structure or GRR flow.
+	GRR model not followed.
+	Equal finding.
+	
+
+
+
+
+
+Lesson Fidelity Rubric 3 - API Version 
+Lesson Fide
+Code
+	Indicator Description
+	Yes
+	Partial
+	No
+	B1
+	The teacher clearly states the lesson's objectives at the start verbally and in written form.
+	The teacher verbally states the lesson's focus on learning about fractions and their components, as evidenced by the opening discussion about dividing paper and identifying parts.
+	The teacher mentions learning about fractions but does not clearly articulate the specific objectives of identifying numerators and denominators or matching visual representations to numerical forms.
+	The teacher does not mention the lesson's objectives verbally or in written form at the start.
+	B2
+	The teacher uses either the resources outlined in the lesson plan or alternative resources facilitating the SLO.
+	The teacher uses the paper for folding activities and references textbook pages 77-80 as specified in the plan.
+	The teacher uses either the paper for folding or the textbook pages, but not both as outlined in the plan.
+	The teacher does not use the paper for folding activities or the textbook pages specified in the plan.
+	B3
+	The teacher applies the suggested learning methodologies to facilitate effective lesson delivery.
+	The teacher uses the CPA approach with emphasis on Pictorial and Abstract representations, as evidenced by using paper folding, drawing shapes on the board, and textbook exercises.
+	The teacher partially applies the CPA approach, using either pictorial or abstract representations but not both as suggested.
+	The teacher does not apply the CPA approach or use pictorial and abstract representations in the lesson.
+	B4
+	The teacher clearly relates classroom activities to the stated objectives.
+	The teacher relates activities such as paper folding and drawing shapes to understanding fractions, numerators, and denominators.
+	The teacher conducts activities but does not clearly connect them to understanding numerators and denominators.
+	The teacher conducts activities without relating them to the lesson's objectives on fractions.
+	B5
+	The teacher designs and delivers instruction that aligns with the cognitive level of the lesson's stated learning objective.
+	The teacher designs activities like paper folding and visual representations that align with understanding and applying fractions.
+	The teacher designs activities that partially align with the cognitive level, focusing more on understanding than applying fractions.
+	The teacher designs activities that do not align with the cognitive level needed for understanding or applying fractions.
+	B6
+	The teacher effectively incorporates 21st century skills into the instructional process.
+	The teacher incorporates critical thinking and communication skills through questioning and pair activities.
+	The teacher incorporates either critical thinking or communication skills, but not both effectively.
+	The teacher does not incorporate 21st-century skills into the lesson.
+	B7
+	The teacher connects the lesson's opening to students' prior knowledge through targeted questioning or an activity outlined in the lesson plan.
+	The teacher connects to prior knowledge by asking students about dividing paper and fractions they might have encountered.
+	The teacher makes a vague connection to prior knowledge without specific questioning or activities.
+	The teacher does not connect the lesson's opening to students' prior knowledge.
+	B8
+	The teacher makes connections in the lesson that relate to other content knowledge or students' daily lives.
+	The teacher relates fractions to real-life examples like pizza slices and everyday objects.
+	The teacher makes limited connections to real-life examples without expanding on their relevance.
+	The teacher does not make connections to other content knowledge or students' daily lives.
+	B9
+	The teacher provides clear instructions and facilitates most of the students during Guided Practice (GP).
+	The teacher provides clear instructions for pair work and monitors students as they solve textbook exercises.
+	The teacher provides instructions but does not effectively monitor or facilitate most students during guided practice.
+	The teacher does not provide clear instructions or facilitate students during guided practice.
+	B10
+	The teacher gives clear instructions and monitors most of the students during Independent Practice (IP).
+	The teacher gives clear instructions for independent textbook exercises and monitors students' progress.
+	The teacher gives instructions but does not effectively monitor most students during independent practice.
+	The teacher does not give clear instructions or monitor students during independent practice.
+	B11
+	The teacher follows the sequence of GRR Model (Gradual Release of Responsibility) throughout the lesson.
+	The teacher follows the GRR model by demonstrating, guiding in pairs, and then allowing independent practice.
+	The teacher partially follows the GRR model, missing one of the stages such as guided or independent practice.
+	The teacher does not follow the GRR model sequence in the lesson.
+	 
+
+
+Lesson Fidelity Rubric 2 - ChatGPT Version 
+
+
+No
+	Partial
+	Yes
+	Indicators 
+	Code
+	Lesson Design and Delivery 
+	The teacher does not state the objectives verbally or in writing.
+
+
+	Objectives stated only verbally or written, not both. 
+	Teacher states lesson objectives verbally and in writing: 'Identify numerator & denominator, match visuals to fractions.
+	The teacher clearly states the lesson's objectives at the start verbally and in written form. 
+	B1
+	No use of listed or alternative resources is evident in the lesson.
+	The teacher uses some resources but either pictorials or textbook  references are missing or underused.
+	The teacher uses paper folding, book (pp. 77–80), and board drawings as planned.
+	The teacher uses either the resources outlined in the lesson plan or alternative resources facilitating the SLO.
+	B2
+	No evidence of CPA methodology; lesson lacks structured progression.
+	Minimum 1 CPA approach (Concrete with paper, Pictorial with drawings, Abstract with symbols) is clearly followed.
+	Minimum 2 CPA approaches (Concrete with paper, Pictorial with drawings, Abstract with symbols) is clearly followed.
+	The teacher applies the suggested learning methodologies to facilitate effective lesson delivery. 
+	B3
+	Activities are unrelated or do not support the objective of understanding fractions.
+	Some activities are related to the objective, but the link is not explicitly made clear to students.
+	All activities directly support identifying and interpreting fractions (e.g., folding paper, matching visuals, quizzes).
+	The teacher clearly relates classroom activities to the stated objective
+	B4
+	Instruction does not match the cognitive demands of the objective or lacks clarity OR only one level of Understanding is applied. 
+	Tasks reflect some alignment but may include steps too basic or slightly advanced for grade level.
+	The teacher matches Bloom’s "Understanding" (identify fractions) and "Applying" (match visuals).
+	The teacher designs and delivers instruction that aligns with the cognitive level of the lesson’s stated learning objective 
+	B5
+	No collaboration, communication, or critical thinking strategies are present.
+	Pair work is included, but critical thinking or communication is limited or not guided.
+	Students collaborate in pairs, communicate ideas, and apply critical thinking to identify parts of fractions.
+	The teacher effectively incorporates 21st century skills into the instructional process
+	B6
+	Student Engagement and Relevance 
+	No effort is made to connect to what students already know.
+	Asks questions but doesn’t build on student responses OR Opening includes demonstration but lacks clear student engagement with prior knowledge.
+	Paper folding and real-life questions (e.g., ("What is half?", What is 1/4th?) effectively activates prior knowledge.
+	The teacher connects the lesson's opening to students’ prior knowledge through targeted questioning or an activity outlined in the lesson plan
+	B7
+	No connections to daily life or other content areas are made.
+	One or two real-life connections are briefly mentioned but not integrated.
+	Examples such as watermelon, pizza, and bottles clearly link fractions to everyday life. 
+	The teacher makes connections in the lesson that relates to other content knowledge or students' daily lives 
+	B8
+	Instructions And Monitoring 
+	Guided Practice is missing or students are left to complete work without guidance.
+	The teacher directs students to complete questions 2-3 in pairs (textbook pp. 78-79), but offers only minimal guidance ('solve these questions') without providing step-by-step instructions, limiting effective support during Guided Practice.
+	The teacher gives clear instructions for the textbook exercise (pages 78–79), assigns students to work in pairs (Math Buddies), and monitors their progress while offering guidance as needed.
+	The teacher provides clear instructions and facilitates most of the students during Guided Practice (GP
+	B9
+	No IP task is assigned OR Students are asked to work independently with no teacher support or instructions.
+	Independent tasks are assigned, but monitoring or support is not specified or inconsistent.
+
+
+	Students solve problems independently while the teacher circulates and assists as needed.
+	The teacher gives clear instructions and monitors most of the students during Independent Practice (IP
+	B10
+	Lesson Closure 
+	GRR is not followed; teacher-centered or student-centered only.
+	Some steps of GRR are used but sequence is not fully followed or clearly defined. 
+	The lesson follows ‘I Do’ (teacher models), ‘We Do’ (guided pair activity), and ‘You Do’ (independent practice).
+	The teacher follows the sequence of GRR Model (Gradual Release of Responsibility) throughout the lesson.
+	B11
+	
+
+
+
+-

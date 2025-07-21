@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Fidelity Rubric Generator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Lesson Fidelity Rubric Generator</h1>
+    </header>
+    <main>
+        <div class="container">
+            <section class="input-panel">
+                <form id="rubric-form" autocomplete="off">
+                    <label for="lesson-plan-text">Paste Lesson Plan:</label>
+                    <textarea id="lesson-plan-text" name="lesson_plan" rows="10" placeholder="Paste lesson plan here..."></textarea>
+                    <div class="or-divider">OR</div>
+                    <label for="lesson-plan-file" class="file-upload-label">Choose File (.txt)</label>
+                    <span id="file-chosen" style="margin-left: 1rem; color: #2563eb; font-weight: 500; font-size: 1rem;">No file chosen</span>
+                    <input type="file" id="lesson-plan-file" name="file" accept=".txt">
+                    <div class="actions">
+                        <button type="button" id="use-example">Use Example Lesson Plan</button>
+                        <button type="submit" id="generate-btn">Generate Rubric</button>
+                    </div>
+                </form>
+            </section>
+            <section id="output-section">
+                <h2>Rubric Output</h2>
+                <div id="loading-spinner" class="spinner" style="display:none;" aria-live="polite"></div>
+                <div id="rubric-table-container"></div>
+                <div id="download-buttons" class="download-buttons" style="display:none;">
+                    <button id="download-csv" class="download-btn">Download CSV</button>
+                    <button id="download-xlsx" class="download-btn">Download Excel</button>
+                    <button id="download-docx" class="download-btn">Download Word</button>
+                </div>
+                <div id="generate-another-container" style="display:none;">
+                    <button id="generate-another" class="secondary-btn">Generate Another Rubric</button>
+                </div>
+                <div id="error-message"></div>
+            </section>
+        </div>
+    </main>
+    <script src="/static/js/app.js"></script>
+</body>
+</html> 
