@@ -366,24 +366,278 @@ Homework
 Complete question 1 from the exercise on textbook page 190.
 
 Desired Rubric Output:
-[
-  {"code": "B1", "indicator_description": "The teacher clearly states the lesson's objectives at the start verbally and in written form.", "yes": "The teacher states and writes: 'Identify and describe the parts of a circle: radius, diameter, and circumference. Draw and label the parts of a circle accurately in a notebook.'", "partial": "Teacher either verbally states or writes the objectives but not both.", "no": "Teacher neither states nor writes the lesson objectives."},
-  {"code": "B2", "indicator_description": "The teacher uses either the resources outlined in the lesson plan or alternative resources facilitating the SLO.", "yes": "Teacher uses circle paper, circular objects, visual aids, and textbook pages 187-189 as outlined in the LP.", "partial": "Only some resources (e.g., just textbook or just visual aids) are used, not all as described.", "no": "No relevant resources or textbook pages are used."},
-  {"code": "B3", "indicator_description": "The teacher applies the suggested learning methodologies to facilitate effective lesson delivery.", "yes": "Teacher uses CPA approach, pictorial representation, hands-on demonstration, and questioning as per the LP.", "partial": "Some methods are used (e.g., only demonstration or only questioning), skipping others.", "no": "Teacher uses traditional lecture only, with no hands-on or visual methods."},
-  {"code": "B4", "indicator_description": "The teacher clearly relates classroom activities to the stated objectives.", "yes": "All activities (object demonstration, drawing, labeling, textbook tasks) directly support identifying and describing circle parts.", "partial": "Activities are loosely connected to SLOs but do not address all circle parts clearly.", "no": "Activities are off-topic and do not support the objectives."},
-  {"code": "B5", "indicator_description": "The teacher delivers instruction that aligns with the cognitive level of the lesson's stated learning objective.", "yes": "Instruction supports understanding and applying: students identify, describe, and draw circle parts, and solve real-life questions.", "partial": "Focus remains at basic recall without encouraging application (e.g., just naming parts, not drawing or relating to real life).", "no": "Instruction does not reflect the stated objectives' cognitive level."},
-  {"code": "B6", "indicator_description": "The teacher effectively incorporates 21st century skills into the instructional process.", "yes": "Critical thinking and problem-solving are included during Guided and Independent Practice.", "partial": "Some questioning is used but without fostering critical thinking or collaboration.", "no": "No use of 21st century skills evident."},
-  {"code": "B7", "indicator_description": "The teacher connects the lesson's opening to students' prior knowledge through targeted questioning or an activity outlined in the lesson plan.", "yes": "Students are asked to name real-life circular objects before learning about circle parts, activating prior knowledge.", "partial": "Some examples are used but questioning is limited or general.", "no": "No reference to prior knowledge or experiences."},
-  {"code": "B8", "indicator_description": "The teacher makes connections in the lesson that relate to other content knowledge or students' daily lives.", "yes": "Connections to real-world objects (wheels, plates, clocks) are made throughout the lesson to anchor concepts in everyday experience.", "partial": "Some links to daily life, but not consistently integrated.", "no": "No connection made between classroom content and students' lived experiences."},
-  {"code": "B9", "indicator_description": "The teacher provides clear instructions and facilitates most of the students during Guided Practice (GP).", "yes": "Clear, scaffolded questions and drawing tasks are used with student pairs; teacher guidance includes examples and monitoring with hints as needed.", "partial": "GP is present but limited in clarity or support.", "no": "No Guided Practice or facilitation observed."},
-  {"code": "B10", "indicator_description": "The teacher gives clear instructions and monitors most of the students during Independent Practice (IP).", "yes": "IP includes completing textbook tasks; teacher walks around and provides praise and support—ensuring understanding.", "partial": "IP task is assigned but monitoring is minimal or unclear.", "no": "IP not implemented or no teacher involvement noted."},
-  {"code": "B11", "indicator_description": "The teacher concludes the lesson on time by summarizing key points and student responses, ensuring clarity before ending the class.", "yes": "The teacher concludes with Thumbs Up/Down assessment, summarizes key circle concepts (radius, diameter, circumference), and ensures understanding before ending.", "partial": "The teacher attempts to summarize or close the lesson but misses either key points, student responses, or does not ensure clarity.", "no": "The teacher does not summarize key points or student responses, or the lesson ends without clear closure."}
-]
+{
+    "questions": [
+        {
+            "prompt": "B1: The teacher clearly states the lesson's objectives at the start verbally and in written form.",
+            "order": 1,
+            "options": [
+                {
+                    "label": "The teacher states and writes: 'Identify and describe the parts of a circle: radius, diameter, and circumference. Draw and label the parts of a circle accurately in a notebook.'",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Teacher either verbally states or writes the objectives but not both.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "Teacher neither states nor writes the lesson objectives.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B2: The teacher uses either the resources outlined in the lesson plan or alternative resources facilitating the SLO.",
+            "order": 2,
+            "options": [
+                {
+                    "label": "Teacher uses circle paper, circular objects, visual aids, and textbook pages 187-189 as outlined in the LP.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Only some resources (e.g., just textbook or just visual aids) are used, not all as described.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "No relevant resources or textbook pages are used.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B3: The teacher applies the suggested learning methodologies to facilitate effective lesson delivery.",
+            "order": 3,
+            "options": [
+                {
+                    "label": "Teacher uses CPA approach, pictorial representation, hands-on demonstration, and questioning as per the LP.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Some methods are used (e.g., only demonstration or only questioning), skipping others.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "Teacher uses traditional lecture only, with no hands-on or visual methods.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B4: The teacher clearly relates classroom activities to the stated objectives.",
+            "order": 4,
+            "options": [
+                {
+                    "label": "All activities (object demonstration, drawing, labeling, textbook tasks) directly support identifying and describing circle parts.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Activities are loosely connected to SLOs but do not address all circle parts clearly.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "Activities are off-topic and do not support the objectives.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B5: The teacher delivers instruction that aligns with the cognitive level of the lesson's stated learning objective.",
+            "order": 5,
+            "options": [
+                {
+                    "label": "Instruction supports understanding and applying: students identify, describe, and draw circle parts, and solve real-life questions.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Focus remains at basic recall without encouraging application (e.g., just naming parts, not drawing or relating to real life).",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "Instruction does not reflect the stated objectives' cognitive level.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B6: The teacher effectively incorporates 21st century skills into the instructional process.",
+            "order": 6,
+            "options": [
+                {
+                    "label": "Critical thinking and problem-solving are included during Guided and Independent Practice.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Some questioning is used but without fostering critical thinking or collaboration.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "No use of 21st century skills evident.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B7: The teacher connects the lesson's opening to students' prior knowledge through targeted questioning or an activity outlined in the lesson plan.",
+            "order": 7,
+            "options": [
+                {
+                    "label": "Students are asked to name real-life circular objects before learning about circle parts, activating prior knowledge.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Some examples are used but questioning is limited or general.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "No reference to prior knowledge or experiences.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B8: The teacher makes connections in the lesson that relate to other content knowledge or students' daily lives.",
+            "order": 8,
+            "options": [
+                {
+                    "label": "Connections to real-world objects (wheels, plates, clocks) are made throughout the lesson to anchor concepts in everyday experience.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Some links to daily life, but not consistently integrated.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "No connection made between classroom content and students' lived experiences.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B9: The teacher provides clear instructions and facilitates most of the students during Guided Practice (GP).",
+            "order": 9,
+            "options": [
+                {
+                    "label": "Clear, scaffolded questions and drawing tasks are used with student pairs; teacher guidance includes examples and monitoring with hints as needed.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "GP is present but limited in clarity or support.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "No Guided Practice or facilitation observed.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B10: The teacher gives clear instructions and monitors most of the students during Independent Practice (IP).",
+            "order": 10,
+            "options": [
+                {
+                    "label": "IP includes completing textbook tasks; teacher walks around and provides praise and support—ensuring understanding.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "IP task is assigned but monitoring is minimal or unclear.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "IP not implemented or no teacher involvement noted.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B11: The teacher concludes the lesson on time by summarizing key points and student responses, ensuring clarity before ending the class.",
+            "order": 11,
+            "options": [
+                {
+                    "label": "The teacher concludes with Thumbs Up/Down assessment, summarizes key circle concepts (radius, diameter, circumference), and ensures understanding before ending.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "The teacher attempts to summarize or close the lesson but misses either key points, student responses, or does not ensure clarity.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "The teacher does not summarize key points or student responses, or the lesson ends without clear closure.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        }
+    ]
+}
 
-Output format: JSON array of objects with keys: code, indicator_description, yes, partial, no.
+Output format: JSON object with "questions" array containing objects with keys: prompt, order, options (where each option has: label, value, score_type, order).
 """
 
-# --- Single High-Quality Example ---
 EXAMPLE_LESSON_PLAN = """Understanding Pronouns
 
 Student Learning Objective
@@ -458,82 +712,271 @@ Instruction: Great job! Remember to think about how pronouns work with the sente
 Homework
 Observe your surroundings and identify pronouns you hear; try to write three sentences at home. Complete the missing letters on page 115 under 'Learing to Spell' in the textbook."""
 
-EXAMPLE_RUBRIC = [
-    {
-        "code": "B1",
-        "indicator_description": "The teacher clearly states the lesson's objectives at the start verbally and in written form.",
-        "yes": "The teacher states the written objectives: 'Identify subject, object, and possessive pronouns in sentences and write sentences using each type of pronoun correctly.'",
-        "partial": "The SLO is stated either verbally or in written form, but not both.",
-        "no": "The SLO is not stated at all—neither verbally nor in written form."
-    },
-    {
-        "code": "B2", 
-        "indicator_description": "The teacher uses either the resources outlined in the lesson plan or alternative resources facilitating the SLO.",
-        "yes": "The teacher uses textbook page 116 as specified, plus board for mind mapping and pronoun examples as outlined in the plan.",
-        "partial": "The teacher uses textbook page 116 but omits the mind mapping or board work described in the plan.",
-        "no": "The teacher does not use textbook page 116 or any alternative resources supporting pronoun identification and sentence writing."
-    },
-    {
-        "code": "B3",
-        "indicator_description": "The teacher applies the suggested learning methodologies to facilitate effective lesson delivery.", 
-        "yes": "The teacher implements mind-mapping, pair work for sentence creation, individual textbook exercises, and 'Thumbs Up/Down' assessment as described.",
-        "partial": "The teacher uses some methods (e.g., mind-mapping and pair work) but omits others like individual practice or thumbs assessment.",
-        "no": "The teacher does not apply the planned methodologies; lesson lacks mind-mapping, collaborative work, or structured assessment."
-    },
-    {
-        "code": "B4",
-        "indicator_description": "The teacher clearly relates classroom activities to the stated objectives.",
-        "yes": "All activities (mind-mapping pronoun types, pair sentence writing, individual textbook exercises) directly support identifying and using pronouns in sentences.",
-        "partial": "Some activities relate to pronoun identification but the connection to sentence writing objectives is unclear or incomplete.",
-        "no": "Activities do not clearly connect to the objectives of identifying pronouns or writing sentences with different pronoun types."
-    },
-    {
-        "code": "B5",
-        "indicator_description": "The teacher delivers instruction that aligns with the cognitive level of the lesson's stated learning objective.",
-        "yes": "Visual mind-mapping, concrete examples ('This pen is mine'), and scaffolded practice align with elementary students' need for concrete learning about pronouns.",
-        "partial": "Some activities are age-appropriate (examples) but others lack sufficient scaffolding or visual support for elementary pronoun learning.",
-        "no": "Instruction is too abstract or advanced for elementary students learning basic pronoun identification and usage."
-    },
-    {
-        "code": "B6",
-        "indicator_description": "The teacher effectively incorporates 21st century skills into the instructional process.",
-        "yes": "Lesson integrates collaboration (pair sentence writing), critical thinking (mind-mapping pronoun categories), and communication (class sharing and discussion).",
-        "partial": "Lesson includes collaboration through pair work but limited evidence of critical thinking or structured communication skills.",
-        "no": "No evidence of collaboration, critical thinking, or communication skills; lesson is teacher-directed without student interaction."
-    },
-    {
-        "code": "B7",
-        "indicator_description": "The teacher connects the lesson's opening to students' prior knowledge through targeted questioning or an activity outlined in the lesson plan.",
-        "yes": "The 'I would...' completion activity and follow-up questioning ('Did you notice how we used words like I, you, my?') connects to students' daily pronoun use.",
-        "partial": "The opening activity occurs but the connection to students' prior knowledge of pronouns is weak or unclear.",
-        "no": "No attempt to connect the lesson opening to students' existing knowledge of pronouns or their daily language use."
-    },
-    {
-        "code": "B8",
-        "indicator_description": "The teacher makes connections in the lesson that relate to other content knowledge or students' daily lives.",
-        "yes": "Examples like 'This pen is mine,' 'That book is hers,' and encouraging students to find pronouns in their surroundings connect to daily life and school materials.",
-        "partial": "Some real-life examples are provided but connections to students' daily experiences are limited or superficial.",
-        "no": "No connections made between pronouns and students' daily life, school materials, or other subject areas."
-    },
-    {
-        "code": "B9",
-        "indicator_description": "The teacher provides clear instructions and facilitates most of the students during Guided Practice (GP).",
-        "yes": "Teacher gives specific pair work instructions (write three sentences, one for each pronoun type), walks around to guide and check, facilitates sharing with feedback.",
-        "partial": "Instructions for pair work are given but teacher provides limited guidance or facilitation during the guided practice.",
-        "no": "No clear guided practice instructions provided, or teacher does not facilitate or support students during pair work."
-    },
-    {
-        "code": "B10", 
-        "indicator_description": "The teacher gives clear instructions and monitors most of the students during Independent Practice (IP).",
-        "yes": "Teacher directs students to page 116 Exercise ii, explains the task (write sentences with different pronouns), walks around providing help and checking accuracy.",
-        "partial": "Clear instructions given for textbook exercise but limited evidence of teacher monitoring or supporting individual students.",
-        "no": "No independent practice task assigned or teacher provides no monitoring or support during individual work."
-    },
-    {
-        "code": "B11",
-        "indicator_description": "The teacher concludes the lesson on time by summarizing key points and student responses, ensuring clarity before ending the class.",
-        "yes": "The teacher concludes with 'Thumbs Up/Down' assessment, summarizes key pronoun concepts, and ensures student understanding before ending ('Remember to think about how pronouns work with the sentences you create').",
-        "partial": "The teacher attempts to summarize or close the lesson but misses either key points, student responses, or does not ensure clarity.",
-        "no": "The teacher does not summarize key points or student responses, or the lesson ends without clear closure."
-    }
-]
+EXAMPLE_RUBRIC = {
+    "questions": [
+        {
+            "prompt": "B1: The teacher clearly states the lesson's objectives at the start verbally and in written form.",
+            "order": 1,
+            "options": [
+                {
+                    "label": "The teacher states the written objectives: 'Identify subject, object, and possessive pronouns in sentences and write sentences using each type of pronoun correctly.'",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "The SLO is stated either verbally or in written form, but not both.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "The SLO is not stated at all—neither verbally nor in written form.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B2: The teacher uses either the resources outlined in the lesson plan or alternative resources facilitating the SLO.",
+            "order": 2,
+            "options": [
+                {
+                    "label": "The teacher uses textbook page 116 as specified, plus board for mind mapping and pronoun examples as outlined in the plan.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "The teacher uses textbook page 116 but omits the mind mapping or board work described in the plan.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "The teacher does not use textbook page 116 or any alternative resources supporting pronoun identification and sentence writing.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B3: The teacher applies the suggested learning methodologies to facilitate effective lesson delivery.",
+            "order": 3,
+            "options": [
+                {
+                    "label": "The teacher implements mind-mapping, pair work for sentence creation, individual textbook exercises, and 'Thumbs Up/Down' assessment as described.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "The teacher uses some methods (e.g., mind-mapping and pair work) but omits others like individual practice or thumbs assessment.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "The teacher does not apply the planned methodologies; lesson lacks mind-mapping, collaborative work, or structured assessment.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B4: The teacher clearly relates classroom activities to the stated objectives.",
+            "order": 4,
+            "options": [
+                {
+                    "label": "All activities (mind-mapping pronoun types, pair sentence writing, individual textbook exercises) directly support identifying and using pronouns in sentences.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Some activities relate to pronoun identification but the connection to sentence writing objectives is unclear or incomplete.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "Activities do not clearly connect to the objectives of identifying pronouns or writing sentences with different pronoun types.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B5: The teacher delivers instruction that aligns with the cognitive level of the lesson's stated learning objective.",
+            "order": 5,
+            "options": [
+                {
+                    "label": "Visual mind-mapping, concrete examples ('This pen is mine'), and scaffolded practice align with elementary students' need for concrete learning about pronouns.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Some activities are age-appropriate (examples) but others lack sufficient scaffolding or visual support for elementary pronoun learning.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "Instruction is too abstract or advanced for elementary students learning basic pronoun identification and usage.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B6: The teacher effectively incorporates 21st century skills into the instructional process.",
+            "order": 6,
+            "options": [
+                {
+                    "label": "Lesson integrates collaboration (pair sentence writing), critical thinking (mind-mapping pronoun categories), and communication (class sharing and discussion).",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Lesson includes collaboration through pair work but limited evidence of critical thinking or structured communication skills.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "No evidence of collaboration, critical thinking, or communication skills; lesson is teacher-directed without student interaction.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B7: The teacher connects the lesson's opening to students' prior knowledge through targeted questioning or an activity outlined in the lesson plan.",
+            "order": 7,
+            "options": [
+                {
+                    "label": "The 'I would...' completion activity and follow-up questioning ('Did you notice how we used words like I, you, my?') connects to students' daily pronoun use.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "The opening activity occurs but the connection to students' prior knowledge of pronouns is weak or unclear.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "No attempt to connect the lesson opening to students' existing knowledge of pronouns or their daily language use.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B8: The teacher makes connections in the lesson that relate to other content knowledge or students' daily lives.",
+            "order": 8,
+            "options": [
+                {
+                    "label": "Examples like 'This pen is mine,' 'That book is hers,' and encouraging students to find pronouns in their surroundings connect to daily life and school materials.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Some real-life examples are provided but connections to students' daily experiences are limited or superficial.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "No connections made between pronouns and students' daily life, school materials, or other subject areas.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B9: The teacher provides clear instructions and facilitates most of the students during Guided Practice (GP).",
+            "order": 9,
+            "options": [
+                {
+                    "label": "Teacher gives specific pair work instructions (write three sentences, one for each pronoun type), walks around to guide and check, facilitates sharing with feedback.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Instructions for pair work are given but teacher provides limited guidance or facilitation during the guided practice.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "No clear guided practice instructions provided, or teacher does not facilitate or support students during pair work.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B10: The teacher gives clear instructions and monitors most of the students during Independent Practice (IP).",
+            "order": 10,
+            "options": [
+                {
+                    "label": "Teacher directs students to page 116 Exercise ii, explains the task (write sentences with different pronouns), walks around providing help and checking accuracy.",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "Clear instructions given for textbook exercise but limited evidence of teacher monitoring or supporting individual students.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "No independent practice task assigned or teacher provides no monitoring or support during individual work.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        },
+        {
+            "prompt": "B11: The teacher concludes the lesson on time by summarizing key points and student responses, ensuring clarity before ending the class.",
+            "order": 11,
+            "options": [
+                {
+                    "label": "The teacher concludes with 'Thumbs Up/Down' assessment, summarizes key pronoun concepts, and ensures student understanding before ending ('Remember to think about how pronouns work with the sentences you create').",
+                    "value": "A",
+                    "score_type": "yes",
+                    "order": 1
+                },
+                {
+                    "label": "The teacher attempts to summarize or close the lesson but misses either key points, student responses, or does not ensure clarity.",
+                    "value": "B",
+                    "score_type": "partial",
+                    "order": 2
+                },
+                {
+                    "label": "The teacher does not summarize key points or student responses, or the lesson ends without clear closure.",
+                    "value": "C",
+                    "score_type": "no",
+                    "order": 3
+                }
+            ]
+        }
+    ]
+}

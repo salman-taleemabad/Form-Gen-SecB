@@ -32,13 +32,20 @@ app.mount("/static", StaticFiles(directory="backend/static"), name="static")
 # Serve templates (HTML)
 templates = Jinja2Templates(directory="backend/templates")
 
+# New models for survey format
+class Option(BaseModel):
+    label: str
+    value: str
+    score_type: str
+    order: int
 
-class RubricRow(BaseModel):
-    code: str
-    indicator_description: str
-    yes: str
-    partial: str
-    no: str
+class Question(BaseModel):
+    prompt: str
+    order: int
+    options: List[Option]
+
+class SurveyRubric(BaseModel):
+    questions: List[Question]
 
 class RubricRequest(BaseModel):
     lesson_plan: str
@@ -48,7 +55,7 @@ class RubricRequest(BaseModel):
 def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-@app.post("/generate-rubric", response_model=List[RubricRow])
+@app.post("/generate-rubric", response_model=SurveyRubric)
 async def generate_rubric(
     lesson_plan: Optional[str] = Form(None),
     file: Optional[UploadFile] = File(None),
@@ -65,84 +72,16 @@ async def generate_rubric(
             raise HTTPException(status_code=400, detail="No lesson plan provided.")
         content = lesson_plan
 
-    user_prompt = f"""Create a lesson-specific fidelity rubric for the following lesson plan. Use ONLY evidence from this specific lesson plan.
+    return await _generate_rubric_from_content(content)
 
-**EXAMPLE FOR REFERENCE ONLY:**
-Lesson Plan: {EXAMPLE_LESSON_PLAN}
-
-Expected Rubric Format: {json.dumps(EXAMPLE_RUBRIC[:2], indent=2)}
-
-**NOW CREATE RUBRIC FOR THIS LESSON PLAN:**
-{content}
-
-Generate the complete JSON rubric for indicators B1-B11:"""
-
-    try:
-        response = openai.chat.completions.create(
-            model="gpt-4o",  # Using latest model
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": user_prompt}
-            ],
-            temperature=0.3,  # Slightly more flexible
-            max_tokens=3000,  # Increased for complete rubrics
-        )
-        
-        text = response.choices[0].message.content
-        if text is None:
-            raise HTTPException(status_code=500, detail="No response from OpenAI API.")
-        
-        # Clean up the response to extract JSON
-        text = text.strip()
-        
-        # Try to find JSON array in the response
-        import re
-        json_match = re.search(r'\[\s*{.*?}\s*\]', text, re.DOTALL)
-        if json_match:
-            rubric_json = json.loads(json_match.group(0))
-        else:
-            # If no JSON array found, try to parse the whole response
-            try:
-                rubric_json = json.loads(text)
-            except:
-                # If that fails, try to extract content between ```json blocks
-                json_code_match = re.search(r'```json\s*(.*?)\s*```', text, re.DOTALL)
-                if json_code_match:
-                    rubric_json = json.loads(json_code_match.group(1))
-                else:
-                    raise ValueError("Could not extract valid JSON from response")
-        
-        # Validate that we have all 11 indicators
-        if len(rubric_json) != 11:
-            # If missing indicators, fill them with basic structure
-            existing_codes = {item.get('code') for item in rubric_json}
-            for i in range(1, 12):
-                code = f"B{i}"
-                if code not in existing_codes:
-                    rubric_json.append({
-                        "code": code,
-                        "indicator_description": f"Indicator {code} - please refer to official rubric",
-                        "yes": "Evidence present in lesson plan",
-                        "partial": "Limited evidence in lesson plan", 
-                        "no": "No evidence in lesson plan"
-                    })
-        
-        # Validate and return
-        return [RubricRow(**row) for row in rubric_json[:11]]  # Ensure only 11 items
-        
-    except json.JSONDecodeError as e:
-        raise HTTPException(status_code=500, detail=f"Invalid JSON response: {str(e)}")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Rubric generation failed: {str(e)}")
-
-@app.post("/rubric-from-string", response_model=List[RubricRow])
+@app.post("/rubric-from-string", response_model=SurveyRubric)
 async def rubric_from_string(payload: dict = Body(...)):
     lesson_plan = payload.get("lesson_plan")
     if not lesson_plan or not isinstance(lesson_plan, str):
         raise HTTPException(status_code=400, detail="Missing or invalid 'lesson_plan' in request body.")
     return await _generate_rubric_from_content(lesson_plan)
 
-@app.post("/rubric-from-filepath", response_model=List[RubricRow])
+@app.post("/rubric-from-filepath", response_model=SurveyRubric)
 async def rubric_from_filepath(payload: dict = Body(...)):
     file_path = payload.get("file_path")
     if not file_path or not isinstance(file_path, str):
@@ -155,8 +94,18 @@ async def rubric_from_filepath(payload: dict = Body(...)):
 
 # --- Internal helper for rubric generation ---
 async def _generate_rubric_from_content(content: str):
-    import re
-    user_prompt = f"""Create a lesson-specific fidelity rubric for the following lesson plan. Use ONLY evidence from this specific lesson plan.\n\n**EXAMPLE FOR REFERENCE ONLY:**\nLesson Plan: {EXAMPLE_LESSON_PLAN}\n\nExpected Rubric Format: {json.dumps(EXAMPLE_RUBRIC[:2], indent=2)}\n\n**NOW CREATE RUBRIC FOR THIS LESSON PLAN:**\n{content}\n\nGenerate the complete JSON rubric for indicators B1-B11:"""
+    user_prompt = f"""Create a lesson-specific fidelity rubric for the following lesson plan. Use ONLY evidence from this specific lesson plan.
+
+**EXAMPLE FOR REFERENCE ONLY:**
+Lesson Plan: {EXAMPLE_LESSON_PLAN}
+
+Expected Rubric Format: {json.dumps(EXAMPLE_RUBRIC, indent=2)}
+
+**NOW CREATE RUBRIC FOR THIS LESSON PLAN:**
+{content}
+
+Generate the complete JSON rubric for indicators B1-B11:"""
+
     try:
         response = openai.chat.completions.create(
             model="gpt-4o",
@@ -165,37 +114,77 @@ async def _generate_rubric_from_content(content: str):
                 {"role": "user", "content": user_prompt}
             ],
             temperature=0.3,
-            max_tokens=3000,
+            max_tokens=4000,  # Increased for new format
         )
+        
         text = response.choices[0].message.content
         if text is None:
             raise HTTPException(status_code=500, detail="No response from OpenAI API.")
+        
+        # Clean up the response to extract JSON
         text = text.strip()
-        json_match = re.search(r'\[\s*{.*?}\s*\]', text, re.DOTALL)
+        
+        # Try to find JSON object with questions array
+        import re
+        json_match = re.search(r'\{[\s\S]*"questions"[\s\S]*\}', text)
         if json_match:
             rubric_json = json.loads(json_match.group(0))
         else:
-            try:
-                rubric_json = json.loads(text)
-            except:
-                json_code_match = re.search(r'```json\s*(.*?)\s*```', text, re.DOTALL)
-                if json_code_match:
-                    rubric_json = json.loads(json_code_match.group(1))
-                else:
+            # Try to extract content between ```json blocks
+            json_code_match = re.search(r'```json\s*(.*?)\s*```', text, re.DOTALL)
+            if json_code_match:
+                rubric_json = json.loads(json_code_match.group(1))
+            else:
+                # Try to parse the whole response
+                try:
+                    rubric_json = json.loads(text)
+                except:
                     raise ValueError("Could not extract valid JSON from response")
-        if len(rubric_json) != 11:
-            existing_codes = {item.get('code') for item in rubric_json}
+        
+        # Validate structure
+        if "questions" not in rubric_json:
+            raise ValueError("Response missing 'questions' array")
+        
+        questions = rubric_json["questions"]
+        
+        # Validate that we have all 11 indicators
+        if len(questions) != 11:
+            # If missing indicators, fill them with basic structure
+            existing_orders = {q.get('order') for q in questions}
             for i in range(1, 12):
-                code = f"B{i}"
-                if code not in existing_codes:
-                    rubric_json.append({
-                        "code": code,
-                        "indicator_description": f"Indicator {code} - please refer to official rubric",
-                        "yes": "Evidence present in lesson plan",
-                        "partial": "Limited evidence in lesson plan",
-                        "no": "No evidence in lesson plan"
+                if i not in existing_orders:
+                    questions.append({
+                        "prompt": f"B{i}: Indicator {i} - please refer to official rubric",
+                        "order": i,
+                        "options": [
+                            {
+                                "label": "Evidence present in lesson plan",
+                                "value": "A",
+                                "score_type": "yes",
+                                "order": 1
+                            },
+                            {
+                                "label": "Limited evidence in lesson plan",
+                                "value": "B", 
+                                "score_type": "partial",
+                                "order": 2
+                            },
+                            {
+                                "label": "No evidence in lesson plan",
+                                "value": "C",
+                                "score_type": "no",
+                                "order": 3
+                            }
+                        ]
                     })
-        return [RubricRow(**row) for row in rubric_json[:11]]
+        
+        # Sort questions by order and take only first 11
+        questions = sorted(questions, key=lambda x: x.get('order', 0))[:11]
+        rubric_json["questions"] = questions
+        
+        # Validate and return
+        return SurveyRubric(**rubric_json)
+        
     except json.JSONDecodeError as e:
         raise HTTPException(status_code=500, detail=f"Invalid JSON response: {str(e)}")
     except Exception as e:
@@ -220,6 +209,8 @@ def health_check():
             "health": "/health",
             "home": "/",
             "generate_rubric": "/generate-rubric",
-            "sample_lesson": "/sample-lesson-plan"
+            "sample_lesson": "/sample-lesson-plan",
+            "rubric_from_string": "/rubric-from-string",
+            "rubric_from_filepath": "/rubric-from-filepath"
         }
     }

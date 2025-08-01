@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "prompt": "B1: The teacher clearly states the lesson's objectives at the start verbally and in written form.",
+      "order": 1,
+      "options": [
+        {
+          "label": "The teacher states and writes: 'Identify different types of fractions: proper, improper, and mixed numbers. Convert between improper fractions and mixed numbers.'",
+          "value": "A",
+          "score_type": "yes",
+          "order": 1
+        },
+        {
+          "label": "The SLO is stated either verbally or in written form, but not both.",
+          "value": "B",
+          "score_type": "partial",
+          "order": 2
+        },
+        {
+          "label": "The SLO is not stated at all—neither verbally nor in written form.",
+          "value": "C",
+          "score_type": "no",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "prompt": "B2: The teacher uses either the resources outlined in the lesson plan or alternative resources facilitating the SLO.",
+      "order": 2,
+      "options": [
+        {
+          "label": "The teacher uses fraction circles, number lines, and textbook pages 45-48 as specified.",
+          "value": "A",
+          "score_type": "yes",
+          "order": 1
+        },
+        {
+          "label": "The teacher uses some resources like fraction circles or number lines but omits others like the textbook.",
+          "value": "B",
+          "score_type": "partial",
+          "order": 2
+        },
+        {
+          "label": "The teacher does not use fraction circles, number lines, or textbook pages as outlined.",
+          "value": "C",
+          "score_type": "no",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "prompt": "B3: The teacher applies the suggested learning methodologies to facilitate effective lesson delivery.",
+      "order": 3,
+      "options": [
+        {
+          "label": "The teacher uses visual representations, hands-on activities with fraction circles, and peer discussions as described.",
+          "value": "A",
+          "score_type": "yes",
+          "order": 1
+        },
+        {
+          "label": "The teacher uses some methodologies like visual aids but omits others such as peer discussions.",
+          "value": "B",
+          "score_type": "partial",
+          "order": 2
+        },
+        {
+          "label": "The teacher does not apply the planned methodologies; lesson lacks visual aids or collaborative activities.",
+          "value": "C",
+          "score_type": "no",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "prompt": "B4: The teacher clearly relates classroom activities to the stated objectives.",
+      "order": 4,
+      "options": [
+        {
+          "label": "All activities (using fraction circles, sorting fraction cards, completing worksheets) directly support identifying and converting fractions.",
+          "value": "A",
+          "score_type": "yes",
+          "order": 1
+        },
+        {
+          "label": "Some activities relate to fraction identification but the connection to conversion objectives is unclear or incomplete.",
+          "value": "B",
+          "score_type": "partial",
+          "order": 2
+        },
+        {
+          "label": "Activities do not clearly connect to the objectives of identifying or converting fractions.",
+          "value": "C",
+          "score_type": "no",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "prompt": "B5: The teacher delivers instruction that aligns with the cognitive level of the lesson's stated learning objective.",
+      "order": 5,
+      "options": [
+        {
+          "label": "Instruction includes visual aids and hands-on activities that align with students' need for concrete learning about fractions.",
+          "value": "A",
+          "score_type": "yes",
+          "order": 1
+        },
+        {
+          "label": "Some activities are age-appropriate but others lack sufficient scaffolding or visual support for learning fractions.",
+          "value": "B",
+          "score_type": "partial",
+          "order": 2
+        },
+        {
+          "label": "Instruction is too abstract or advanced for students learning basic fraction identification and conversion.",
+          "value": "C",
+          "score_type": "no",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "prompt": "B6: The teacher effectively incorporates 21st century skills into the instructional process.",
+      "order": 6,
+      "options": [
+        {
+          "label": "Lesson integrates collaboration (pair work), critical thinking (sorting fractions), and problem-solving (converting fractions).",
+          "value": "A",
+          "score_type": "yes",
+          "order": 1
+        },
+        {
+          "label": "Lesson includes collaboration through pair work but limited evidence of critical thinking or problem-solving.",
+          "value": "B",
+          "score_type": "partial",
+          "order": 2
+        },
+        {
+          "label": "No evidence of collaboration, critical thinking, or problem-solving; lesson is teacher-directed without student interaction.",
+          "value": "C",
+          "score_type": "no",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "prompt": "B7: The teacher connects the lesson's opening to students' prior knowledge through targeted questioning or an activity outlined in the lesson plan.",
+      "order": 7,
+      "options": [
+        {
+          "label": "The teacher asks students to give examples of fractions in daily life, connecting to their existing knowledge.",
+          "value": "A",
+          "score_type": "yes",
+          "order": 1
+        },
+        {
+          "label": "The opening activity occurs but the connection to students' prior knowledge of fractions is weak or unclear.",
+          "value": "B",
+          "score_type": "partial",
+          "order": 2
+        },
+        {
+          "label": "No attempt to connect the lesson opening to students' existing knowledge of fractions or their daily life.",
+          "value": "C",
+          "score_type": "no",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "prompt": "B8: The teacher makes connections in the lesson that relate to other content knowledge or students' daily lives.",
+      "order": 8,
+      "options": [
+        {
+          "label": "Examples like cooking, sharing pizza, and measuring ingredients connect fractions to daily life.",
+          "value": "A",
+          "score_type": "yes",
+          "order": 1
+        },
+        {
+          "label": "Some real-life examples are provided but connections to students' daily experiences are limited or superficial.",
+          "value": "B",
+          "score_type": "partial",
+          "order": 2
+        },
+        {
+          "label": "No connections made between fractions and students' daily life or other subject areas.",
+          "value": "C",
+          "score_type": "no",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "prompt": "B9: The teacher provides clear instructions and facilitates most of the students during Guided Practice (GP).",
+      "order": 9,
+      "options": [
+        {
+          "label": "Teacher gives specific instructions for sorting fraction cards, walks around to guide and check, facilitates discussion with probing questions.",
+          "value": "A",
+          "score_type": "yes",
+          "order": 1
+        },
+        {
+          "label": "Instructions for sorting fractions are given but teacher provides limited guidance or facilitation during the guided practice.",
+          "value": "B",
+          "score_type": "partial",
+          "order": 2
+        },
+        {
+          "label": "No clear guided practice instructions provided, or teacher does not facilitate or support students during pair work.",
+          "value": "C",
+          "score_type": "no",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "prompt": "B10: The teacher gives clear instructions and monitors most of the students during Independent Practice (IP).",
+      "order": 10,
+      "options": [
+        {
+          "label": "Teacher directs students to complete worksheet on page 47, explains the task, circulates to provide help and check work.",
+          "value": "A",
+          "score_type": "yes",
+          "order": 1
+        },
+        {
+          "label": "Clear instructions given for worksheet but limited evidence of teacher monitoring or supporting individual students.",
+          "value": "B",
+          "score_type": "partial",
+          "order": 2
+        },
+        {
+          "label": "No independent practice task assigned or teacher provides no monitoring or support during individual work.",
+          "value": "C",
+          "score_type": "no",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "prompt": "B11: The teacher concludes the lesson on time by summarizing key points and student responses, ensuring clarity before ending the class.",
+      "order": 11,
+      "options": [
+        {
+          "label": "The teacher concludes by asking about the difference between proper and improper fractions, summarizes key concepts, and ensures understanding.",
+          "value": "A",
+          "score_type": "yes",
+          "order": 1
+        },
+        {
+          "label": "The teacher attempts to summarize or close the lesson but misses either key points, student responses, or does not ensure clarity.",
+          "value": "B",
+          "score_type": "partial",
+          "order": 2
+        },
+        {
+          "label": "The teacher does not summarize key points or student responses, or the lesson ends without clear closure.",
+          "value": "C",
+          "score_type": "no",
+          "order": 3
+        }
+      ]
+    }
+  ]
+}
