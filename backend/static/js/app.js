@@ -92,21 +92,34 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         try {
+            console.log("🔍 DEBUG: Sending request to /generate-rubric");
             const res = await fetch('/generate-rubric', {
                 method: 'POST',
                 body: formData
             });
+            console.log("🔍 DEBUG: Response status:", res.status);
+            console.log("🔍 DEBUG: Response ok:", res.ok);
+            
             if (!res.ok) {
                 const errData = await res.json();
+                console.log("❌ DEBUG: Error response:", errData);
                 throw new Error(errData.detail || 'Failed to generate rubric.');
             }
+            
             const rubric = await res.json();
+            console.log("🔍 DEBUG: Received rubric:", rubric);
+            console.log("🔍 DEBUG: Rubric type:", typeof rubric);
+            console.log("🔍 DEBUG: Rubric keys:", Object.keys(rubric));
+            console.log("🔍 DEBUG: Has questions property:", rubric.hasOwnProperty('questions'));
+            console.log("🔍 DEBUG: Questions array length:", rubric.questions ? rubric.questions.length : 'no questions property');
+            
             lastRubric = rubric;
             renderRubricTable(rubric);
             downloadButtons.style.display = 'flex';
             generateAnotherContainer.style.display = 'block';
             inputPanel.style.display = 'none';
         } catch (err) {
+            console.log("❌ DEBUG: Error in form submission:", err);
             errorMessage.textContent = err.message || 'Error generating rubric.';
         } finally {
             loadingSpinner.style.display = 'none';
@@ -116,30 +129,73 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function renderRubricTable(rubric) {
-        if (!Array.isArray(rubric) || rubric.length === 0) {
-            rubricTableContainer.innerHTML = '<p>No rubric generated.</p>';
-            downloadButtons.style.display = 'none';
-            generateAnotherContainer.style.display = 'none';
+        console.log("🔍 DEBUG: renderRubricTable called with:", rubric);
+        
+        // Check if it's the new format (object with questions array)
+        if (rubric && rubric.questions && Array.isArray(rubric.questions)) {
+            console.log("🔍 DEBUG: Using new format with questions array");
+            if (rubric.questions.length === 0) {
+                rubricTableContainer.innerHTML = '<p>No rubric generated.</p>';
+                downloadButtons.style.display = 'none';
+                generateAnotherContainer.style.display = 'none';
+                return;
+            }
+            
+            let html = '<table id="rubric-table"><thead><tr>' +
+                '<th>Code</th>' +
+                '<th>Indicator Description</th>' +
+                '<th>Yes</th>' +
+                '<th>Partial</th>' +
+                '<th>No</th>' +
+                '</tr></thead><tbody>';
+            
+            for (const question of rubric.questions) {
+                const yesOption = question.options.find(opt => opt.score_type === 'yes') || {};
+                const partialOption = question.options.find(opt => opt.score_type === 'partial') || {};
+                const noOption = question.options.find(opt => opt.score_type === 'no') || {};
+                
+                html += '<tr>' +
+                    `<td class="code-cell">B${question.order}</td>` +
+                    `<td>${question.prompt}</td>` +
+                    `<td>${yesOption.label || ''}</td>` +
+                    `<td>${partialOption.label || ''}</td>` +
+                    `<td>${noOption.label || ''}</td>` +
+                    '</tr>';
+            }
+            html += '</tbody></table>';
+            rubricTableContainer.innerHTML = html;
             return;
         }
-        let html = '<table id="rubric-table"><thead><tr>' +
-            '<th>Code</th>' +
-            '<th>Indicator Description</th>' +
-            '<th>Yes</th>' +
-            '<th>Partial</th>' +
-            '<th>No</th>' +
-            '</tr></thead><tbody>';
-        for (const row of rubric) {
-            html += '<tr>' +
-                `<td class="code-cell">${row.code}</td>` +
-                `<td>${row.indicator_description}</td>` +
-                `<td>${row.yes}</td>` +
-                `<td>${row.partial}</td>` +
-                `<td>${row.no}</td>` +
-                '</tr>';
+        
+        // Check if it's the old format (array of objects)
+        if (Array.isArray(rubric) && rubric.length > 0) {
+            console.log("🔍 DEBUG: Using old format with array");
+            let html = '<table id="rubric-table"><thead><tr>' +
+                '<th>Code</th>' +
+                '<th>Indicator Description</th>' +
+                '<th>Yes</th>' +
+                '<th>Partial</th>' +
+                '<th>No</th>' +
+                '</tr></thead><tbody>';
+            for (const row of rubric) {
+                html += '<tr>' +
+                    `<td class="code-cell">${row.code}</td>` +
+                    `<td>${row.indicator_description}</td>` +
+                    `<td>${row.yes}</td>` +
+                    `<td>${row.partial}</td>` +
+                    `<td>${row.no}</td>` +
+                    '</tr>';
+            }
+            html += '</tbody></table>';
+            rubricTableContainer.innerHTML = html;
+            return;
         }
-        html += '</tbody></table>';
-        rubricTableContainer.innerHTML = html;
+        
+        // If neither format works
+        console.log("❌ DEBUG: No valid rubric format found");
+        rubricTableContainer.innerHTML = '<p>No rubric generated.</p>';
+        downloadButtons.style.display = 'none';
+        generateAnotherContainer.style.display = 'none';
     }
 
     // --- Download logic ---

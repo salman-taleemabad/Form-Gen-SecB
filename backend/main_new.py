@@ -6,16 +6,13 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 from typing import List, Optional
-import openai
 from dotenv import load_dotenv
 import json
 from pathlib import Path
-from backend.prompts import SYSTEM_PROMPT, EXAMPLE_LESSON_PLAN, EXAMPLE_RUBRIC
+from backend.genai_service import GenAIService
+from backend.prompts import EXAMPLE_LESSON_PLAN, EXAMPLE_RUBRIC
 
 load_dotenv()
-
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-openai.api_key = OPENAI_API_KEY
 
 app = FastAPI()
 
@@ -32,7 +29,7 @@ app.mount("/static", StaticFiles(directory="backend/static"), name="static")
 # Serve templates (HTML)
 templates = Jinja2Templates(directory="backend/templates")
 
-# New models for survey format
+# Models for survey format
 class Option(BaseModel):
     label: str
     value: str
@@ -92,68 +89,41 @@ async def rubric_from_filepath(payload: dict = Body(...)):
         raise HTTPException(status_code=400, detail=f"Could not read file: {str(e)}")
     return await _generate_rubric_from_content(content)
 
-# --- Internal helper for rubric generation ---
+# --- Internal helper for rubric generation using new approach ---
 async def _generate_rubric_from_content(content: str):
-    user_prompt = f"""Create a lesson-specific fidelity rubric for the following lesson plan. Use ONLY evidence from this specific lesson plan.
-
-**EXAMPLE FOR REFERENCE ONLY:**
-Lesson Plan: {EXAMPLE_LESSON_PLAN}
-
-Expected Rubric Format: {json.dumps(EXAMPLE_RUBRIC, indent=2)}
-
-**NOW CREATE RUBRIC FOR THIS LESSON PLAN:**
-{content}
-
-Generate the complete JSON rubric for indicators B1-B11:"""
-
+    """
+    Generate rubric using the new single prompt approach (matching teammate's method)
+    """
     try:
-        response = openai.chat.completions.create(
-            model="gpt-4o",
-            
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": user_prompt}
-            ],
-            temperature=0.3,
-            max_tokens=4000,  # Increased for new format
+        print(f"🔍 DEBUG: Starting rubric generation for content length: {len(content)}")
+        print(f"🔍 DEBUG: Content preview: {content[:200]}...")
+        
+        # Use the new GenAIService with single prompt approach
+        print("🔍 DEBUG: Calling GenAIService.generate_rubric_from_lesson_plan...")
+        response_content, tokens_used = GenAIService.generate_rubric_from_lesson_plan(
+            lesson_plan=content
         )
         
-        text = response.choices[0].message.content
-        if text is None:
-            raise HTTPException(status_code=500, detail="No response from OpenAI API.")
-        
-        # Clean up the response to extract JSON
-        text = text.strip()
-        
-        # Try to find JSON object with questions array
-        import re
-        json_match = re.search(r'\{[\s\S]*"questions"[\s\S]*\}', text)
-        if json_match:
-            rubric_json = json.loads(json_match.group(0))
-        else:
-            # Try to extract content between ```json blocks
-            json_code_match = re.search(r'```json\s*(.*?)\s*```', text, re.DOTALL)
-            if json_code_match:
-                rubric_json = json.loads(json_code_match.group(1))
-            else:
-                # Try to parse the whole response
-                try:
-                    rubric_json = json.loads(text)
-                except:
-                    raise ValueError("Could not extract valid JSON from response")
+        print(f"🔍 DEBUG: GenAIService returned response type: {type(response_content)}")
+        print(f"🔍 DEBUG: Response content keys: {list(response_content.keys()) if isinstance(response_content, dict) else 'Not a dict'}")
+        print(f"🔍 DEBUG: Tokens used: {tokens_used}")
         
         # Validate structure
-        if "questions" not in rubric_json:
+        if "questions" not in response_content:
+            print(f"❌ DEBUG: Response missing 'questions' array. Full response: {response_content}")
             raise ValueError("Response missing 'questions' array")
         
-        questions = rubric_json["questions"]
+        questions = response_content["questions"]
+        print(f"🔍 DEBUG: Found {len(questions)} questions in response")
         
         # Validate that we have all 11 indicators
         if len(questions) != 11:
+            print(f"⚠️ DEBUG: Expected 11 questions, got {len(questions)}")
             # If missing indicators, fill them with basic structure
             existing_orders = {q.get('order') for q in questions}
             for i in range(1, 12):
                 if i not in existing_orders:
+                    print(f"🔍 DEBUG: Adding missing question B{i}")
                     questions.append({
                         "prompt": f"B{i}: Indicator {i} - please refer to official rubric",
                         "order": i,
@@ -181,14 +151,22 @@ Generate the complete JSON rubric for indicators B1-B11:"""
         
         # Sort questions by order and take only first 11
         questions = sorted(questions, key=lambda x: x.get('order', 0))[:11]
-        rubric_json["questions"] = questions
+        response_content["questions"] = questions
+        
+        print(f"🔍 DEBUG: Final questions count: {len(questions)}")
+        print(f"🔍 DEBUG: First question preview: {questions[0] if questions else 'No questions'}")
         
         # Validate and return
-        return SurveyRubric(**rubric_json)
+        print("🔍 DEBUG: Creating SurveyRubric object...")
+        result = SurveyRubric(**response_content)
+        print(f"✅ DEBUG: Successfully created rubric with {len(result.questions)} questions")
+        return result
         
-    except json.JSONDecodeError as e:
-        raise HTTPException(status_code=500, detail=f"Invalid JSON response: {str(e)}")
     except Exception as e:
+        print(f"❌ DEBUG: Error in _generate_rubric_from_content: {str(e)}")
+        print(f"❌ DEBUG: Error type: {type(e)}")
+        import traceback
+        print(f"❌ DEBUG: Full traceback: {traceback.format_exc()}")
         raise HTTPException(status_code=500, detail=f"Rubric generation failed: {str(e)}")
 
 @app.get("/sample-lesson-plan")
@@ -203,9 +181,9 @@ def health_check():
     """
     return {
         "status": "healthy",
-        "message": "Lesson Fidelity Rubric Generator is running",
+        "message": "Lesson Fidelity Rubric Generator (New Single Prompt Approach) is running",
         "timestamp": "2024-01-01T00:00:00Z",
-        "version": "1.0.0",
+        "version": "2.0.0",
         "endpoints": {
             "health": "/health",
             "home": "/",
@@ -214,4 +192,4 @@ def health_check():
             "rubric_from_string": "/rubric-from-string",
             "rubric_from_filepath": "/rubric-from-filepath"
         }
-    }
+    } 
