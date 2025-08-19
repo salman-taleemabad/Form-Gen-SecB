@@ -729,7 +729,7 @@ Desired Rubric Output:
 Output format: JSON object with "questions" array containing objects with keys: prompt, order, options (where each option has: label, value, score_type, order).
 
 Input Lesson Plan:
-{{lesson_plan}}
+{lesson_plan}
 
 Generate the complete JSON rubric for indicators B1-B11:""" 
 
